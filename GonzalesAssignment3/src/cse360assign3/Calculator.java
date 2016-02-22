@@ -11,11 +11,15 @@ public class Calculator
 	/** int total is the total within the Calculator */
 	private int total;
 
+	/** String history is the history of what has been done */
+	public String history = "";
+	
 	/** Calculator constructor initializes total to 0
 	*/
 	public Calculator () 
 	{
 		total = 0;  // not needed - included for clarity
+		history += Integer.toString(total);
 	}
 	
 	/** Returns the total within calculator
@@ -33,7 +37,8 @@ public class Calculator
 	*/
 	public void add (int value) 
 	{
-		total += value;		
+		total += value;
+		history += " + " + Integer.toString(value);
 	}
 	
 	/** Subtracts an inputted value from the total
@@ -42,7 +47,8 @@ public class Calculator
 	*/
 	public void subtract (int value) 
 	{
-		total -= value;		
+		total -= value;	
+		history += " - " + Integer.toString(value);
 	}
 	
 	/** Multiplies an inputted value by the total
@@ -52,6 +58,7 @@ public class Calculator
 	public void multiply (int value) 
 	{
 		total *= value;
+		history += " * " + Integer.toString(value);
 	}
 	
 	/** Adds an inputted value to the total
@@ -65,6 +72,8 @@ public class Calculator
 		
 		else
 			total = total/value;
+			
+		history += " / " + Integer.toString(value);
 	}
 	
 	/** Returns a string of history within Calculator
@@ -73,6 +82,6 @@ public class Calculator
 	*/
 	public String getHistory () 
 	{
-		return "";
+		return history;
 	}
 }
