@@ -24,7 +24,7 @@ public class Calculator
 	*/
 	public int getTotal () 
 	{
-		return 0;
+		return total;
 	}
 	
 	/** Adds an inputted value to the total
@@ -33,7 +33,7 @@ public class Calculator
 	*/
 	public void add (int value) 
 	{
-		
+		total += value;		
 	}
 	
 	/** Subtracts an inputted value from the total
@@ -42,7 +42,7 @@ public class Calculator
 	*/
 	public void subtract (int value) 
 	{
-		
+		total -= value;		
 	}
 	
 	/** Multiplies an inputted value by the total
@@ -51,7 +51,7 @@ public class Calculator
 	*/
 	public void multiply (int value) 
 	{
-		
+		total *= value;
 	}
 	
 	/** Adds an inputted value to the total
@@ -60,7 +60,11 @@ public class Calculator
 	*/
 	public void divide (int value) 
 	{
+		if(value==0)
+			total=0;
 		
+		else
+			total = total/value;
 	}
 	
 	/** Returns a string of history within Calculator
